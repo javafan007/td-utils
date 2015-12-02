@@ -1,7 +1,9 @@
 经讨论，我们就统一采用`fastjson`进行`json`处理。
+
 它的`API`设计简单，速度快，提供`JSONObject`等。
 
 因`fastjson`的`API`已非常简洁，我们无需再做多余的封装，不再提供内部的工具包，自个儿去玩。
+
 `fastjson`项目地址: [https://github.com/alibaba/fastjson](https://github.com/alibaba/fastjson)
 
 
