@@ -5,27 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.dooioo.td</groupId>
-    <artifactId>utils</artifactId>
+    <artifactId>td-utils</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <encoding>UTF-8</encoding>
         <spring.version>4.2.3.RELEASE</spring.version>
+        <compile.version>1.8</compile.version>
     </properties>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.3</version>
-                <configuration>
-                    <target>1.8</target>
-                    <source>1.8</source>
-                    <encoding>UTF-8</encoding>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    <name>td-utils</name>
+    <url>https://github.com/DooiooSource/td-utils</url>
 
     <dependencies>
         <dependency>
@@ -68,5 +58,45 @@
             <artifactId>slf4j-api</artifactId>
             <version>1.7.13</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
+
+    <!-- start build -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>${compile.version}</source>
+                    <target>${compile.version}</target>
+                    <showWarnings>false</showWarnings>
+                    <compilerVersion>${compile.version}</compilerVersion>
+                    <encoding>${encoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <encoding>${encoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

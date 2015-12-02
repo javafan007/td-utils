@@ -1,13 +1,29 @@
-经讨论，我们就统一采用`fastjson`进行`json`处理。
-它的`API`设计简单，速度快，提供`JSONObject`等。
-
-因`fastjson`的`API`已非常简洁，我们无需再做多余的封装，不再提供内部的工具包，自个儿去玩。
-`fastjson`项目地址: [https://github.com/alibaba/fastjson](https://github.com/alibaba/fastjson)
+package com.dooioo.td.utils.json;
 
 
-提供以下几个简单的`example`，供上手参考，可在`com.dooioo.td.utils.json.FastJsonTest`中运行。
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.annotation.JSONField;
+import com.alibaba.fastjson.serializer.JSONSerializer;
+import com.alibaba.fastjson.serializer.NameFilter;
+import com.alibaba.fastjson.serializer.SerializeWriter;
+import com.alibaba.fastjson.serializer.ValueFilter;
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
-```java
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
+/**
+ * fastjson example，供学习用，并不是去测试FastJson
+ *
+ * @author 闷骚乔巴
+ * @since 15/12/2
+ */
+
 @RunWith(JUnit4.class)
 public class FastJsonTest {
 
@@ -153,7 +169,3 @@ class UserField extends Object {
         return user.getId() == this.getId() && user.getName().equals(this.getName());
     }
 }
-```
-
-
-
