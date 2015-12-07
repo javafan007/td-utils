@@ -105,14 +105,14 @@ public final class Is  {
      * 是否相等(Null-safe)
      *
      * <pre>
-     * ObjectUtils.equals(null, null)                  = true
-     * ObjectUtils.equals(null, "")                    = false
-     * ObjectUtils.equals("", null)                    = false
-     * ObjectUtils.equals("", "")                      = true
-     * ObjectUtils.equals(Boolean.TRUE, null)          = false
-     * ObjectUtils.equals(Boolean.TRUE, "true")        = false
-     * ObjectUtils.equals(Boolean.TRUE, Boolean.TRUE)  = true
-     * ObjectUtils.equals(Boolean.TRUE, Boolean.FALSE) = false
+     * Is.equals(null, null)                  = true
+     * Is.equals(null, "")                    = false
+     * Is.equals("", null)                    = false
+     * Is.equals("", "")                      = true
+     * Is.equals(Boolean.TRUE, null)          = false
+     * Is.equals(Boolean.TRUE, "true")        = false
+     * Is.equals(Boolean.TRUE, Boolean.TRUE)  = true
+     * Is.equals(Boolean.TRUE, Boolean.FALSE) = false
      * </pre>
      *
      * @param object1  the first object, may be {@code null}
