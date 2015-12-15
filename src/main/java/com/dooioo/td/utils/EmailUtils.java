@@ -50,33 +50,27 @@ public class EmailUtils {
      * @param to
      * @return
      */
-    public static EmailUtils to(String to){
-        return new EmailUtils(to);
-    }
-
-    public static EmailUtils to(List<String> toList){
-        return new EmailUtils(toList);
-    }
-
-    /**
-     * 单个收件人
-     * @param to
-     */
-    public EmailUtils(String to){
+    public EmailUtils to(String to){
         this.toList.add(to);
+        return this;
     }
 
-    /**
-     * 多个主收件人
-     * @param toList
-     * @return
-     */
-    public EmailUtils(List<String> toList){
+    public EmailUtils to(List<String> toList){
         if(this.toList.size() > 0 ){
             this.toList.addAll(toList);
         }else{
             this.toList = toList;
         }
+        return this;
+    }
+
+    public static EmailUtils senderEmail(String senderEmail, String senderPwd){
+        return new EmailUtils(senderEmail, senderPwd);
+    }
+
+    public EmailUtils(String senderEmail, String senderPwd){
+        this.senderEmail = senderEmail;
+        this.senderPwd = senderPwd;
     }
 
     /**
@@ -197,16 +191,6 @@ public class EmailUtils {
      */
     public EmailUtils date(Date date){
         this.date = date;
-        return this;
-    }
-
-    public EmailUtils senderEmail(String senderEmail){
-        this.senderEmail = senderEmail;
-        return this;
-    }
-
-    public EmailUtils senderPwd(String senderPwd){
-        this.senderPwd = senderPwd;
         return this;
     }
 
@@ -364,7 +348,7 @@ public class EmailUtils {
      * @throws Exception
      */
     private static void addAttach(Multipart multipart, Message mimeMessage,
-               Map<String,InputStream> map, List<String> urlPath) throws Exception{
+                                  Map<String,InputStream> map, List<String> urlPath) throws Exception{
         if(!Is.empty(urlPath)){
             for(String path : urlPath){
                 if(Is.empty(path))break;
